@@ -1,0 +1,11 @@
+# Time before the first block is restored, in milliseconds.
+delay: 2000
+
+# Delay falls off exponentially as blocks are restored.
+# A value of 0 gives every block the same delay.
+delay-falloff: 0.175
+
+# Minimum interval between block restorations, in milliseconds.
+# Values are rounded up to server ticks (50 ms).
+minimum-delay: 50
+

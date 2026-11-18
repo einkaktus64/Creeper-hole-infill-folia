@@ -1,0 +1,8 @@
+name: CreeperHoleInfill
+version: '1.0.0'
+main: dev.creeperholeinfill.CreeperHoleInfillPlugin
+api-version: '26.3'
+folia-supported: true
+description: Gradually restores blocks destroyed by creeper explosions.
+author: ein_kaktus_
+
