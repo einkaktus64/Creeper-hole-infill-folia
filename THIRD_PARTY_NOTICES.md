@@ -2,7 +2,7 @@
 
 ## Vane
 
-The creeper explosion block restoration behavior is adapted from the `WorldRebuild` feature in [oddlama/vane](https://github.com/oddlama/vane), Copyright (c) 2020 oddlama. Vane is distributed under the MIT License:
+The creeper explosion block restoration behavior is adapted from the `WorldRebuild` feature in Vane's `vane-admin` plugin, developed by the Vane project contributors ([oddlama/vane](https://github.com/oddlama/vane)). The upstream Vane code is Copyright (c) 2020 oddlama and is distributed under the MIT License:
 
 ```text
 MIT License
