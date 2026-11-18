@@ -17,5 +17,6 @@ The plugin jar is created at `target/creeper-hole-infill-folia-1.0.0.jar`. Put i
 - `delay`: milliseconds before the first block is restored (default `2000`).
 - `delay-falloff`: exponential reduction in the interval as blocks are restored (default `0.175`).
 - `minimum-delay`: minimum interval in milliseconds between restored blocks (default `50`). Values are rounded to server ticks.
+- `particles.enabled`: show block-colored fragments and end-rod sparkles as blocks return (default `true`).
 
 Only blocks owned by the region processing the explosion are rebuilt by this plugin. Blocks outside that region remain in the vanilla explosion block list and are handled by Folia normally. Restored blocks are skipped if another player or plugin has changed their location since the explosion.

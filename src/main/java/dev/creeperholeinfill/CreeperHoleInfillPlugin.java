@@ -6,6 +6,7 @@ import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Particle;
 import org.bukkit.SoundCategory;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
@@ -22,6 +23,7 @@ public final class CreeperHoleInfillPlugin extends JavaPlugin implements Listene
     private long delayMillis;
     private double delayFalloff;
     private long minimumDelayMillis;
+    private boolean particlesEnabled;
 
     @Override
     public void onEnable() {
@@ -34,6 +36,7 @@ public final class CreeperHoleInfillPlugin extends JavaPlugin implements Listene
         delayMillis = Math.max(0L, getConfig().getLong("delay", 2000L));
         delayFalloff = Math.max(0.0, getConfig().getDouble("delay-falloff", 0.175));
         minimumDelayMillis = Math.max(50L, getConfig().getLong("minimum-delay", 50L));
+        particlesEnabled = getConfig().getBoolean("particles.enabled", true);
     }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
@@ -100,6 +103,28 @@ public final class CreeperHoleInfillPlugin extends JavaPlugin implements Listene
         }
 
         state.update(true, false);
+        if (particlesEnabled) {
+            Location particleOrigin = block.getLocation().add(0.5, 0.5, 0.5);
+            block.getWorld().spawnParticle(
+                    Particle.BLOCK,
+                    particleOrigin,
+                    12,
+                    0.32,
+                    0.32,
+                    0.32,
+                    0.08,
+                    block.getBlockData()
+            );
+            block.getWorld().spawnParticle(
+                    Particle.END_ROD,
+                    particleOrigin,
+                    4,
+                    0.24,
+                    0.24,
+                    0.24,
+                    0.015
+            );
+        }
         block.getWorld().playSound(
                 block.getLocation(),
                 block.getBlockSoundGroup().getPlaceSound(),

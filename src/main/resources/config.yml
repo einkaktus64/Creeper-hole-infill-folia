@@ -9,3 +9,7 @@ delay-falloff: 0.175
 # Values are rounded up to server ticks (50 ms).
 minimum-delay: 50
 
+# Show block fragments and sparkle particles as each block is restored.
+particles:
+  enabled: true
+
